@@ -1,0 +1,506 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	background-color: rgb(237, 236, 236);
+}
+
+.container {
+	width: 100%;
+}
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+.top_nav {
+	height: 30px;
+	background-color: rgb(229, 233, 237);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.top_nav .nav1 a {
+	color: rgb(44, 180, 180);
+	text-decoration: none;
+	border-right: 1px solid rgba(87, 81, 81, 0.716);
+	padding-right: 15px;
+}
+
+.top_nav .nav1 .mail::before {
+	content: 'Mail:';
+	margin-left: 10px;
+	color: rgb(48, 46, 46);
+	border-left: 1px solid rgba(87, 81, 81, 0.716);
+	margin-left: 25px;
+	padding-left: 10px;
+}
+
+.top_nav .nav1 .contact::before {
+	content: 'Contact no.:';
+	margin-left: 10px;
+	color: rgb(48, 46, 46);
+}
+
+.top_nav .nav2 .apps {
+	padding: 3px;
+	height: 23px;
+	width: 23px;
+	border-radius: 5px;
+	float: left;
+	color: rgb(48, 48, 48);
+}
+
+.top_nav .nav2 .apps:hover {
+	background-color: rgba(150, 156, 159, 0.57);
+}
+
+/*Second navbar*/
+.rnav {
+	width: 100%;
+	background-color: rgba(38, 50, 62, 0.865);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rnav div {
+	display: flex;
+	width: 33%;
+}
+
+.rnav .logo img {
+	height: 80px;
+}
+
+.rnav .menu {
+	width: 50%;
+}
+.rnav .slogo {
+	justify-content: end;
+}
+.rnav .slogo img {
+	height: 70px;
+	margin-right: 5px;
+}
+
+.rnav .menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 33%;
+}
+
+.rnav .menu a {
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	position: relative;
+
+	font-size: 110%;
+}
+
+.rnav .menu a:hover {
+	color: rgb(255, 255, 255);
+}
+
+.menu a:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: rgb(44, 180, 180);
+	transform: scaleX(0%);
+	transition: all 1s;
+	transform-origin: left;
+}
+
+.menu a:hover:before {
+	transform: scaleX(1);
+}
+
+.menu a:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: rgb(44, 180, 180);
+	transform: scaleX(0);
+	transition: all 1s;
+	transform-origin: right;
+}
+
+.menu a:hover:after {
+	transform: scaleX(1);
+}
+
+.rnav .menu a:hover {
+	color: rgb(212, 212, 212);
+}
+
+.rav .menu a:active {
+	color: gold;
+}
+
+.trans {
+	height: 80px;
+	width: 100%;
+	background-color: transparent;
+}
+.image-slideshow-container {
+	width: 100%;
+	max-height: 85vh;
+	height: 30vw;
+	position: relative;
+	margin-top: 110px;
+	background-size: cover;
+	background-position: center;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.9;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.welcome {
+	padding: 20px;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	align-items: center;
+	background: rgba(40, 40, 40, 0.555);
+}
+.wow {
+	visibility: hidden;
+}
+.fadeInUp {
+	animation-duration: 1s;
+	animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+.welcome .bb {
+	display: flex;
+	font-size: 22px;
+	flex-direction: column;
+}
+
+.welcome .bb .static-txt {
+	color: white;
+	font-weight: 400;
+}
+
+.welcome .bb .dynamic-txt {
+	/* margin-left: 20px; */
+	/* margin-right: 20px; */
+	overflow: hidden;
+	height: 30px;
+}
+
+.dynamic-txt li {
+	list-style: none;
+	font-weight: 500;
+	top: 0;
+	color: rgb(30, 221, 221);
+	animation: shift 3s steps(2) infinite;
+	position: relative;
+}
+
+@keyframes shift {
+	100% {
+		top: -62px;
+	}
+}
+
+.dynamic-txt li span::after {
+	content: '';
+	position: absolute;
+	background: rgb(0, 0, 0);
+	height: 100%;
+	width: 100%;
+	border-left: 2px solid rgb(30, 221, 221);
+	left: 0;
+	top: 0;
+	animation: typing 1.5s steps(10) infinite;
+}
+
+.dynamic-txt li span {
+	position: relative;
+	background-color: rgb(0, 0, 0);
+	padding: 5px;
+	font-family: 'Lucida Console', Courier, monospace;
+}
+
+@keyframes typing {
+	100% {
+		left: 100%;
+		margin: 0 -30px 0 30px;
+	}
+}
+
+.about {
+	width: 100%;
+	padding: 20px;
+	background: white;
+}
+
+.about .abt1 {
+	background-size: cover;
+	display: flex;
+	color: black;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.about .abt1 .ciso {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	box-shadow: 0px 5px 10px rgb(185, 167, 188);
+	max-width: 500px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	justify-content: center;
+}
+.ciso .heading {
+	margin-top: 20px;
+	font-size: 20px;
+}
+.ciatf {
+	background-image: url('images/aboutimg2.jpg');
+	background-size: cover;
+	box-shadow: 6px 5px 10px rgb(185, 167, 188);
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	width: 600px;
+	height: 600px;
+}
+.count {
+	display: flex;
+	height: 350px;
+	width: 100%;
+	background-color: #63a2bbe2;
+	color: white;
+	font-weight: bold;
+	justify-content: center;
+}
+
+.stats {
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.stats .stat {
+	text-align: center;
+}
+.message {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 100px;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 75px;
+	width: 75px;
+	transition: 0.25s;
+}
+
+.message:hover {
+	background-color: rgba(234, 233, 233, 0.704);
+}
+
+.message img {
+	height: 70px;
+	width: 70px;
+	border-radius: 100px;
+}
+
+.vision {
+	width: 100%;
+	background-image: url('images/about_back.jpg');
+	background-size: cover;
+	display: flex;
+	padding: 20px 20px 20px 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.vision .photo {
+	overflow: hidden;
+	width: 33%;
+	height: 200px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px rgb(147, 145, 147);
+	text-align: center;
+	align-items: center;
+	margin-right: 20px;
+	justify-content: center;
+	max-width: 250px;
+	display: flex;
+	position: relative;
+}
+
+.vision .photo::before {
+	color: #000;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(230, 244, 252, 0.839);
+	transform: translateY(-100%);
+	transition: all 1s;
+	/* center */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.photo img {
+	width: 100%;
+}
+.vision :hover::before {
+	transform: translateY(0);
+}
+.vision .a:before {
+	content: 'VISION: We are committed to becoming a world class supplier of Innovative Automotive Solutions.';
+}
+
+.vision .b:before {
+	content: "MISSION: To exceed our customer's expectations in Quality, Delivery, and Cost through continuous improvement and customer interaction.";
+}
+
+.vision .c:before {
+	content: 'INSPITATION: Our organization is inspired by the Make-in-India initiative to take Indian manufacturing to newer heights.';
+}
+
+.email {
+	height: 200px;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	background-image: url('images/input_bgc.png');
+	background-repeat: no-repeat;
+	background-size: 200px;
+}
+
+.email h1 {
+	font-weight: normal;
+	font-size: 30px;
+	display: inline-block;
+	background-color: white;
+	color: rgb(136, 157, 253);
+	padding: 10px 40px;
+	margin-top: 10px;
+	clip-path: polygon(0% 20%, 100% 0%, 90% 80%, 10% 100%);
+	text-shadow: 2px 2px 3px rgb(102, 252, 232);
+}
+
+.email .talk {
+	display: block;
+	width: 40%;
+	height: 45px;
+	margin-top: 25px;
+	margin-left: 30%;
+	padding: 10px 30px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: large;
+	box-sizing: border-box;
+}
+.email .send {
+	height: 35px;
+	border: none;
+	width: 110px;
+	background-color: rgb(0, 153, 255);
+	color: white;
+	font-size: large;
+	margin-top: 5px;
+}
+.df {
+	height: 40px;
+	background-color: #535871;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.df h1 {
+	font-weight: lighter;
+}
+.map {
+	width: 100%;
+	position: relative;
+	padding: 30px;
+}
+.footer {
+	background-color: rgb(210, 218, 255);
+	position: relative;
+}
+
+@media (max-width: 1000px) {
+	.top_nav,
+	.rnav .menu {
+		display: none;
+	}
+	.image-slideshow-container {
+		margin-top: 80px;
+		height: 40vh;
+	}
+	.vision {
+		flex-direction: column;
+		img {
+			width: 100%;
+		}
+		padding: 20px 20px 0 20px;
+	}
+	.vision .photo {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.about .abt1 {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.ciatf {
+		display: none;
+	}
+}
