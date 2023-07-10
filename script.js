@@ -29,7 +29,8 @@ function animateValue(obj, start, end, duration) {
 function isElementInViewport(element) {
 	var rect = element.getBoundingClientRect();
 	return (
-		rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+		rect.top + 100 <=
+		(window.innerHeight || document.documentElement.clientHeight)
 	);
 }
 

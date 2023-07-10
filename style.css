@@ -11,6 +11,7 @@ body {
 	justify-content: center;
 	display: flex;
 	background-color: rgb(237, 236, 236);
+	background-image: url('images/Car_Factory.png');
 }
 
 .container {
@@ -68,6 +69,7 @@ body {
 /*Second navbar*/
 .rnav {
 	width: 100%;
+	height: 50px;
 	background-color: rgba(38, 50, 62, 0.865);
 	display: flex;
 	justify-content: space-between;
@@ -80,7 +82,7 @@ body {
 }
 
 .rnav .logo img {
-	height: 80px;
+	height: 50px;
 }
 
 .rnav .menu {
@@ -90,7 +92,7 @@ body {
 	justify-content: end;
 }
 .rnav .slogo img {
-	height: 70px;
+	height: 50px;
 	margin-right: 5px;
 }
 
@@ -166,7 +168,7 @@ body {
 	max-height: 85vh;
 	height: 30vw;
 	position: relative;
-	margin-top: 110px;
+	margin-top: 80px;
 	background-size: cover;
 	background-position: center;
 }
@@ -327,6 +329,9 @@ body {
 .stats .stat {
 	text-align: center;
 }
+.stat h3 {
+	font-size: 40px;
+}
 .message {
 	position: fixed;
 	bottom: 10px;
@@ -353,15 +358,17 @@ body {
 
 .vision {
 	width: 100%;
-	background-image: url('images/about_back.jpg');
 	background-size: cover;
-	display: flex;
 	padding: 20px 20px 20px 20px;
+	text-align: center;
+	background-color: white;
+}
+.vision-photos {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-
-.vision .photo {
+.vision-photos .photo {
 	overflow: hidden;
 	width: 33%;
 	height: 200px;
@@ -377,18 +384,19 @@ body {
 	position: relative;
 }
 
-.vision .photo::before {
+.vision-photos .photo::before {
 	color: #000;
 	position: absolute;
-	width: 100%;
+	width: 80%;
 	height: 100%;
 	background: rgba(230, 244, 252, 0.839);
 	transform: translateY(-100%);
 	transition: all 1s;
 	/* center */
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
+	padding: 10%;
 }
 .photo img {
 	width: 100%;
@@ -396,19 +404,20 @@ body {
 .vision :hover::before {
 	transform: translateY(0);
 }
-.vision .a:before {
+.vision-photos .a:before {
 	content: 'VISION: We are committed to becoming a world class supplier of Innovative Automotive Solutions.';
 }
 
-.vision .b:before {
+.vision-photos .b:before {
 	content: "MISSION: To exceed our customer's expectations in Quality, Delivery, and Cost through continuous improvement and customer interaction.";
 }
 
-.vision .c:before {
+.vision-photos .c:before {
 	content: 'INSPITATION: Our organization is inspired by the Make-in-India initiative to take Indian manufacturing to newer heights.';
 }
 
 .email {
+	display: flex;
 	height: 200px;
 	width: 100%;
 	text-align: center;
@@ -417,6 +426,7 @@ body {
 	background-image: url('images/input_bgc.png');
 	background-repeat: no-repeat;
 	background-size: 200px;
+	flex-direction: column;
 }
 
 .email h1 {
@@ -433,10 +443,10 @@ body {
 
 .email .talk {
 	display: block;
-	width: 40%;
+	max-width: 500px;
+	width: 86%;
 	height: 45px;
 	margin-top: 25px;
-	margin-left: 30%;
 	padding: 10px 30px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -481,17 +491,14 @@ body {
 		display: none;
 	}
 	.image-slideshow-container {
-		margin-top: 80px;
+		margin-top: 50px;
 		height: 40vh;
 	}
-	.vision {
+	.vision-photos {
 		flex-direction: column;
-		img {
-			width: 100%;
-		}
 		padding: 20px 20px 0 20px;
 	}
-	.vision .photo {
+	.vision-photos .photo {
 		width: 100%;
 		margin-bottom: 20px;
 	}
